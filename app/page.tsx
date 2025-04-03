@@ -1,11 +1,11 @@
 'use client';
 
-import { motion, AnimatePresence } from 'framer-motion';
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
-import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 import { useAuth } from './AuthContext';
 
 // Card animation variants
@@ -304,6 +304,15 @@ export default function Home() {
             whileTap={{ scale: 0.95 }}
           >
             Contact Us
+          </motion.button>
+        </Link>
+        <Link href="/prompt">
+          <motion.button
+            className="mt-6 px-6 py-3 bg-white text-primary rounded-lg text-lg hover:bg-secondary hover:text-text hover:shadow-custom-hover transition-all duration-300"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            AI prompt
           </motion.button>
         </Link>
       </motion.section>

@@ -1,7 +1,7 @@
 'use client';
 
-import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 export default function Navbar() {
@@ -55,7 +55,7 @@ export default function Navbar() {
         </Link>
       </div>
       <ul className="flex gap-6">
-        {['Home', 'About', 'Products', 'Industries', 'Contact'].map(
+        {['Home', 'About', 'Products', 'Industries', 'Contact', 'Prompt'].map(
           (item, index) => (
             <motion.li
               key={item}
