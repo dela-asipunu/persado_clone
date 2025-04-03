@@ -13,5 +13,5 @@ async def login_route(user: UserAuth):
     return login(email=user.email, password=user.password)
 
 @router.post("/logout")
-async def logout_route(access_token: str):
-    return logout(access_token=access_token)
+async def logout_route():
+    return logout()

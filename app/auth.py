@@ -19,9 +19,9 @@ def login(email: str, password: str):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-def logout(access_token: str):
+def logout():
     try:
-        response = supabase.auth.sign_out(access_token=access_token)
+        response = supabase.auth.sign_out()
         if response.get("error"):
             raise HTTPException(status_code=400, detail=response["error"]["message"])
         return response
