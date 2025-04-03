@@ -17,6 +17,13 @@ async def login_route(user: UserAuth):
 async def logout_route():
     return logout()
 
+@router.post("/generate")
+async def generate_route(prompt: UserPrompt):
+    response = generate_response(prompt.input_text)
+    if not response:
+        raise HTTPException(status_code=400, detail="Failed to generate response")
+    return {"response": response}
+
 
 
 

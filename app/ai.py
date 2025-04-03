@@ -9,6 +9,15 @@ model = genai.GenerativeModel("gemini-1.5-pro")
 
 def generate_response(prompt):
     """Generate a response using the Gemini model"""
-    response = model.generate_content(prompt)
+    structured_prompt = f"""
+    Please provide a detailed response to the following prompt:
+    "{prompt}"
+    
+    Format the response with:
+    - Paragraphs for explanations
+    - Bullet points for key points
+    - Use clear and concise language
+    """
+    response = model.generate_content(structured_prompt)
     return response.text  # Extract text from the response
 
